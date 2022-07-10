@@ -1,0 +1,48 @@
+<%= form_with(model: trainee, local: true) do |form| %>
+  <% if trainee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(trainee.errors.count, "error") %> prohibited this trainee from being saved:</h2>
+
+      <ul>
+        <% trainee.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="field">
+    <%= form.label :user_name %>
+    <%= form.text_field :user_name %>
+  </div>
+
+<div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :contact %>
+    <%= form.password_field :contact %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

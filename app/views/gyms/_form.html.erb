@@ -1,0 +1,58 @@
+<%= form_with(model: gym, local: true) do |form| %>
+  <% if gym.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gym.errors.count, "error") %> prohibited this gym from being saved:</h2>
+
+      <ul>
+        <% gym.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+
+<div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :contact %>
+    <%= form.password_field :contact %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fees %>
+    <%= form.text_field :fees %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :owner_name %>
+    <%= form.text_field :owner_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
